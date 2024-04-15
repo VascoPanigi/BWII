@@ -41,25 +41,37 @@ main {
     color: white;
   }
   /* .right-section {
-    .friends-activity {
-      p {
-        font-weight: 500;
-        color: white;
-        margin: 0;
-      }
-      svg {
-        color: rgb(179, 179, 179);
-      }
+   
+      
     }
   } */
 }
-
+.horizontal-rule {
+  border-top: 1px solid rgb(90, 90, 90);
+}
+.friends-activity {
+  color: rgb(179, 179, 179);
+  p {
+    font-weight: 500;
+    color: white;
+    margin: 0;
+  }
+  svg {
+    :hover {
+      color: white;
+    }
+  }
+}
+.color-text {
+  color: rgb(179, 179, 179);
+}
 .icons-right-side {
   list-style: none;
 }
 .friend-image {
   border-radius: 50%;
   width: 3rem;
+  margin-inline-end: 5px;
 }
 
 .session-time {
@@ -76,4 +88,54 @@ main {
 }
 .card-body {
   padding: 0;
+}
+
+.album-section {
+  p {
+    font-size: 0.8em;
+    small {
+      font-size: 0.7em;
+    }
+  }
+}
+.playlist-container > ul > li {
+  list-style: none;
+  :hover {
+    color: white;
+  }
+}
+.playlist-container {
+  padding-block-start: 0.5rem;
+}
+.playlist-container > ul {
+  padding-inline-start: 0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+.middle-section-btn-container {
+  background-color: gray;
+  border-radius: 50%;
+}
+.dropdown button {
+  border-radius: 20px;
+  padding: 1px 12px 1px 1px;
+  background-color: #0a0a0a;
+  border: 0;
+  img {
+    border-radius: 50%;
+  }
+}
+.middle-section-btn-container button {
+  width: 32px;
 }
