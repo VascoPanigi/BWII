@@ -55,3 +55,8 @@ text {
 .card-title {
   font-size: 1rem;
 }
+
+.album-section {
+  padding: 0;
+  margin: 0;
+}
