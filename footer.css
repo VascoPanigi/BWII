@@ -1,0 +1,41 @@
+footer {
+  position: sticky;
+}
+/* SONG TIMER */
+#songTimer {
+  display: inline-flex;
+}
+/* PROGRESS BAR*/
+.progress-bar {
+  position: relative;
+  width: 95%;
+  height: 0.4em;
+  background-color: #4d4d4d;
+  border-radius: 1.5em;
+  color: white;
+}
+.progress-bar::before {
+  content: attr(data-label);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0em;
+  top: 0em;
+  bottom: 0em;
+  right: 0em;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 0rem;
+  max-width: 100%;
+
+  background-color: #1ed760;
+  border-radius: 1em;
+}
+/* PREV SONG è IL BOTTONE PRIMA DEL PLAY BUTTON ED è L'UNICO CHE VA MODIFICATO PERCHè VA RUOTATO*/
+#prevSong {
+  transform: rotate(180deg);
+}
+footer svg:hover {
+  transform: scale3d(1.5, 1.5, 1.5);
+
+  fill: #1ed760;
+}
