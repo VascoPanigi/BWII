@@ -60,7 +60,6 @@ main {
 .friend-image {
   border-radius: 50%;
   width: 3rem;
-  padding-inline-end: 5px;
 }
 
 .session-time {
