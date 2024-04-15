@@ -10,7 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../BW1/ass" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <header></header>
@@ -18,13 +18,14 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-3 bg-black left-section d-flex flex-column" style="height: 100vh">
-            <p>ciao</p>
-            <div>
-              <svg
+            <div class="clickableSection">
+              <div class="upperSection">
+                <div class="clickableComp d-flex flex-row align-items-center">
+                  <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="#B3B3B3"
                 class="bi bi-house"
                 viewBox="0 0 16 16"
               >
@@ -32,11 +33,14 @@
                   d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
                 />
               </svg>
-              <svg
+              <text alignment-baseline="middle" x="60" y="65">Home</text>
+                </div>
+                <div class="clickableComp d-flex flex-row align-items-center">
+                  <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="#B3B3B3"
                 class="bi bi-search"
                 viewBox="0 0 16 16"
               >
@@ -44,11 +48,14 @@
                   d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
                 />
               </svg>
-              <svg
+              <text alignment-baseline="middle" x="60" y="65">Search</text>
+                </div>
+                <div class="clickableComp d-flex flex-row align-items-center">
+                  <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="#B3B3B3"
                 class="bi bi-collection"
                 viewBox="0 0 16 16"
               >
@@ -56,7 +63,15 @@
                   d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z"
                 />
               </svg>
+              <text alignment-baseline="middle" x="60" y="65">Library</text>
+                </div>
+              </div>
+              <div class="bottomSection">
+
+              </div>
             </div>
+            </div>
+          </div>
           </div>
           <div class="col-7 bg-dark main-section" style="height: 100vh"><p>ciao</p></div>
           <div class="col-2 bg-black right-section" style="height: 100vh"><p>ciao</p></div>
@@ -71,3 +86,51 @@
     ></script>
   </body>
 </html>
+
+
+<!-- <p>ciao</p>
+            <div>
+              <div class='clickableComps'>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#B3B3B3"
+                class="bi bi-house mb-4"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                />
+              </svg>
+              <p>Home</p>
+            </div>
+            <div class='clickableComps'>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#B3B3B3"
+                class="bi bi-search mb-4"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg>
+              <p>Search</p>
+            </div>
+            <div class='clickableComps'>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#B3B3B3"
+                class="bi bi-collection mb-4"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z"
+                />
+              </svg>
+              <p>Library</p> -->
