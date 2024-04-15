@@ -1,0 +1,57 @@
+body {
+  font-family: "Circular";
+}
+
+.clickable-section {
+  margin-block-start: 2rem;
+  margin-inline-start: 0.7rem;
+}
+.upper-side {
+  margin-bottom: 2rem;
+}
+.horizontal-rule {
+  border-top: 1px solid white;
+}
+.playlist-container > ul > li {
+  list-style: none;
+}
+.playlist-container {
+  padding-block-start: 1rem;
+}
+.playlist-container > ul {
+  padding-inline-start: 1rem;
+}
+
+.button-item {
+  margin-block-start: 1rem;
+  font-weight: 700;
+}
+
+.button-item:nth-child(1) {
+  margin-block-start: 0;
+}
+
+text:hover {
+  color: red;
+}
+
+text {
+  color: #dddddd;
+}
+
+.icons-right-side {
+  list-style: none;
+}
+
+.friend-image {
+  border-radius: 50%;
+  width: 3rem;
+}
+
+.session-time {
+  font-size: 0.7rem;
+}
+
+.card-title {
+  font-size: 1rem;
+}
