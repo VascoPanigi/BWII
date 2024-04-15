@@ -2,50 +2,65 @@ body {
   font-family: "Circular";
 }
 
-.clickable-section {
-  margin-block-start: 2rem;
-  margin-inline-start: 0.7rem;
-}
-.upper-side {
-  margin-bottom: 2rem;
-}
-.horizontal-rule {
-  border-top: 1px solid white;
-}
-.playlist-container > ul > li {
-  list-style: none;
-}
-.playlist-container {
-  padding-block-start: 1rem;
-}
-.playlist-container > ul {
-  padding-inline-start: 1rem;
-}
-
-.button-item {
-  margin-block-start: 1rem;
-  font-weight: 700;
-}
-
-.button-item:nth-child(1) {
-  margin-block-start: 0;
-}
-
-text:hover {
-  color: red;
-}
-
-text {
-  color: #dddddd;
+main {
+  .left-icons {
+    color: rgb(179, 179, 179);
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 20px;
+    svg {
+      margin-right: 20px;
+      height: 24px;
+      width: 24px;
+    }
+    p {
+      margin: 0;
+    }
+    img {
+      margin-right: 20px;
+      height: 24px;
+      width: 24px;
+      border-radius: 3px;
+    }
+    .bookmark-icon {
+      margin-right: 20px;
+      height: 24px;
+      width: 24px;
+      border-radius: 3px;
+      background-color: #004537;
+      display: flex;
+      justify-content: center;
+      svg {
+        color: #129644;
+        width: 13px;
+        margin: 0;
+      }
+    }
+  }
+  .left-icons:hover {
+    color: white;
+  }
+  /* .right-section {
+    .friends-activity {
+      p {
+        font-weight: 500;
+        color: white;
+        margin: 0;
+      }
+      svg {
+        color: rgb(179, 179, 179);
+      }
+    }
+  } */
 }
 
 .icons-right-side {
   list-style: none;
 }
-
 .friend-image {
   border-radius: 50%;
   width: 3rem;
+  padding-inline-end: 5px;
 }
 
 .session-time {
@@ -59,4 +74,7 @@ text {
 .album-section {
   padding: 0;
   margin: 0;
+}
+.card-body {
+  padding: 0;
 }
