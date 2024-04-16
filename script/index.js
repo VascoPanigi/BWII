@@ -112,7 +112,7 @@ const getPlaylist = async () => {
   const getRandomNumber = () => Math.floor(Math.random() * 500) + 1;
 
   const id = getRandomNumber();
-  console.log(id);
+  // console.log(id);
   // const id = 76;
 
   const url = "https://deezerdevs-deezer.p.rapidapi.com/playlist/" + id;
