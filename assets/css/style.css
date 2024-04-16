@@ -41,10 +41,10 @@ main {
     color: white;
   }
   /* .right-section {
-   
-      
-    }
-  } */
+     
+        
+      }
+    } */
 }
 .horizontal-rule {
   border-top: 1px solid rgb(90, 90, 90);
@@ -124,7 +124,7 @@ main {
   background: grey;
 }
 .middle-section-btn-container {
-  background-color: gray;
+  background-color: #131313;
   border-radius: 50%;
 }
 .dropdown button {
@@ -138,4 +138,14 @@ main {
 }
 .middle-section-btn-container button {
   width: 32px;
+}
+
+/* SAVE AND PLAY BTN  */
+#playBtnGreen {
+  background-color: #1ed760;
+  border: 0px solid transparent;
+  padding: 5px;
+}
+#hoverCard:hover {
+  background-color: white;
 }
