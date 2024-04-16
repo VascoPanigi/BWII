@@ -98,20 +98,21 @@ main {
     }
   }
 }
-.playlist-container > ul > li {
-  list-style: none;
-  :hover {
+.playlist-container {
+  p:hover {
     color: white;
+    cursor: pointer;
   }
 }
 .playlist-container {
   padding-block-start: 0.5rem;
+  height: 500px;
 }
 .playlist-container > ul {
   padding-inline-start: 0;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -148,4 +149,15 @@ main {
 }
 #hoverCard:hover {
   background-color: white;
+}
+.imgPlaylistLeft {
+  margin-right: 10px;
+  border-radius: 3px;
+  width: 40px;
+  height: 40px;
+}
+
+#collapse-left-side-button {
+  margin-right: 20px;
+  padding: 2px;
 }
