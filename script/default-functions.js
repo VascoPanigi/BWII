@@ -1,3 +1,4 @@
+//CHIARA = playlist left section
 const playlistLeft = async function () {
   let arrayPlaylistIds = ["13", "12", "14", "5", "25", "24", "28", "37", "46", "13"];
   const containerPlaylistLeft = document.querySelector(".playlist-container");
@@ -41,15 +42,18 @@ const playlistLeft = async function () {
 const closeRightBtn = document.querySelector("#closeRightSection");
 closeRightBtn.addEventListener("click", function () {
   const rightSection = document.querySelector(".right-section");
-  rightSection.classList.add("d-none");
+  rightSection.classList.add("d-lg-none");
+  rightSection.classList.remove("d-lg-block");
+
   const mainSection = document.querySelector(".main-section");
   const leftSection = document.querySelector(".left-section");
-  if (leftSection.classList.contains("col-1") && mainSection.classList.contains("col-9")) {
-    mainSection.classList.remove("col-9");
-    mainSection.classList.add("col-11");
+
+  if (leftSection.classList.contains("col-1") && mainSection.classList.contains("col-md-9")) {
+    mainSection.classList.remove("col-md-9");
+    mainSection.classList.add("col-md-11");
   } else {
-    mainSection.classList.remove("col-7");
-    mainSection.classList.add("col-9");
+    mainSection.classList.remove("col-lg-7");
+    mainSection.classList.add("col-lg-9");
   }
 });
 
@@ -59,22 +63,27 @@ closeLeftBtn.addEventListener("click", function () {
   const mainSection = document.querySelector(".main-section");
   const rightSection = document.querySelector(".right-section");
 
-  if (rightSection.classList.contains("d-none")) {
-    if (leftSection.classList.contains("col-3") && mainSection.classList.contains("col-9")) {
+  if (!rightSection.classList.contains("d-lg-block")) {
+    if (leftSection.classList.contains("col-3") && mainSection.classList.contains("col-md-9")) {
       leftSection.classList.remove("col-3");
       leftSection.classList.add("col-1");
-      mainSection.classList.remove("col-9");
-      mainSection.classList.add("col-11");
+      mainSection.classList.remove("col-md-9");
+      mainSection.classList.add("col-lg-11");
+
       const allParagraphs = document.querySelectorAll(".left-section p");
+      console.debug("cavallo");
       for (let i = 0; i < allParagraphs.length; i++) {
         allParagraphs[i].classList.add("d-none");
       }
       leftSection.classList.add("align-items-center");
     } else {
+      console.log("capra");
       leftSection.classList.add("col-3");
       leftSection.classList.remove("col-1");
-      mainSection.classList.add("col-9");
-      mainSection.classList.remove("col-11");
+      mainSection.classList.add("col-md-9");
+      mainSection.classList.remove("col-md-11");
+
+      mainSection.classList.remove("col-lg-11");
       const allParagraphs = document.querySelectorAll(".left-section p");
       for (let i = 0; i < allParagraphs.length; i++) {
         allParagraphs[i].classList.remove("d-none");
@@ -82,21 +91,22 @@ closeLeftBtn.addEventListener("click", function () {
       leftSection.classList.remove("align-items-center");
     }
   } else {
-    if (leftSection.classList.contains("col-3") && mainSection.classList.contains("col-7")) {
+    if (leftSection.classList.contains("col-3") && mainSection.classList.contains("col-lg-7")) {
       leftSection.classList.remove("col-3");
       leftSection.classList.add("col-1");
-      mainSection.classList.remove("col-7");
-      mainSection.classList.add("col-9");
+      mainSection.classList.remove("col-lg-7");
+      mainSection.classList.add("col-lg-9");
       const allParagraphs = document.querySelectorAll(".left-section p");
       for (let i = 0; i < allParagraphs.length; i++) {
         allParagraphs[i].classList.add("d-none");
       }
       leftSection.classList.add("align-items-center");
+      console.log(rightSection.classList);
     } else {
       leftSection.classList.add("col-3");
       leftSection.classList.remove("col-1");
-      mainSection.classList.add("col-7");
-      mainSection.classList.remove("col-9");
+      mainSection.classList.add("col-lg-7");
+      mainSection.classList.remove("col-lg-9");
       const allParagraphs = document.querySelectorAll(".left-section p");
       for (let i = 0; i < allParagraphs.length; i++) {
         allParagraphs[i].classList.remove("d-none");

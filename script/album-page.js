@@ -35,34 +35,32 @@ const getAlbumData = async () => {
   artistHeader.innerHTML = ``
 } */
 
-const createAlbumHeader = async (obj) =>{
-
+const createAlbumHeader = async (obj) => {
   // Creazione immagine album
 
   const header = document.getElementById("album-header");
 
   const image = obj.cover_medium;
 
-  header.innerHTML = `<img src="${image}" class="img-fluid" alt="cover image" />`
+  header.innerHTML = `<img src="${image}" class="img-fluid" alt="cover image" />`;
 
   //Creazione Testo Album + Artista
 
   const artistHeader = document.getElementById("artist-header");
 
-  const title = obj.title
-  const artistImage = obj.artist.picture_medium
-  const artistName = obj.artist.name
-  const releaseDate = obj.release_date
+  const title = obj.title;
+  const artistImage = obj.artist.picture_medium;
+  const artistName = obj.artist.name;
+  const releaseDate = obj.release_date;
 
-  const releaseYear = releaseDate.split("-")[0]
-  console.log(releaseYear)
+  const releaseYear = releaseDate.split("-")[0];
+  console.log(releaseYear);
 
-  const tracks = obj.nb_tracks
-  const duration = obj.duration
+  const tracks = obj.nb_tracks;
+  const duration = obj.duration;
 
-  const durationInMins = Math.floor(parseInt(duration) / 60)
-  console.log(durationInMins)
-
+  const durationInMins = Math.floor(parseInt(duration) / 60);
+  console.log(durationInMins);
 
   artistHeader.innerHTML = `<div class="text-right">
                             <p class="album">ALBUM</p>
@@ -73,12 +71,10 @@ const createAlbumHeader = async (obj) =>{
                               ><span class="fw-light">• ${releaseYear} • ${tracks} brani, </span
                               ><span class="fw-light">${durationInMins} min</span>
                             </p>
-                          </div>`
+                          </div>`;
 
-  
-
-  console.log()
-}
+  console.log();
+};
 
 const createSongs = async (obj) => {
   const row = document.getElementById("row");
@@ -93,7 +89,7 @@ const createSongs = async (obj) => {
     const rank = obj.tracks.data[i].rank;
     const track_num = i + 1;
     const duration = obj.tracks.data[i].duration;
-    const durationInMins = Math.floor(parseInt(duration) / 60)
+    const durationInMins = Math.floor(parseInt(duration) / 60);
     const remainingSeconds = parseInt(duration) % 60;
 
     div.innerHTML = `
@@ -102,7 +98,9 @@ const createSongs = async (obj) => {
     <div class="col text-start">${track_num}</div>
                           <div class="col">${artist} - ${song_name}</div>
                           <div class="col">${rank}</div>
-                          <div class="col">${durationInMins}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}</div>
+                          <div class="col">${durationInMins}:${
+      remainingSeconds < 10 ? "0" : ""
+    }${remainingSeconds}</div>
                           </div>
     `;
 
@@ -113,4 +111,5 @@ const createSongs = async (obj) => {
 
 window.addEventListener("DOMContentLoaded", () => {
   getAlbumData();
+  playlistLeft();
 });
