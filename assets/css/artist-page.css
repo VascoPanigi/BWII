@@ -1,6 +1,7 @@
 main {
   .main-section {
     color: white;
+    position: relative;
     .backgroundArtistImage {
       height: 350px;
       background-size: cover;
@@ -78,5 +79,10 @@ main {
         }
       }
     }
+  }
+  .header-main-section {
+    position: absolute;
+    top: 10px;
+    left: 0;
   }
 }

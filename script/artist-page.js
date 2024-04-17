@@ -130,8 +130,6 @@ const getArtist = async function (idArtist) {
     h1.innerText = result.name;
     let monthlyListners = document.querySelector(".monthlyListners");
     monthlyListners.innerText = result.nb_fan + " ascoltatori mensili";
-
-    getTracks(result.id);
   } catch (error) {
     console.error(error);
   }
@@ -206,4 +204,5 @@ window.addEventListener("DOMContentLoaded", () => {
   let artistId = params.get("artistId");
   console.log(artistId);
   getArtist(artistId);
+  getTracks(artistId);
 });

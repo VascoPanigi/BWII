@@ -21,7 +21,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left section -->
-          <div class="d-none d-sm-flex col-3 bg-black left-section flex-column pt-2 ps-3" style="height: 100vh">
+          <div class="d-none d-md-block col-3 bg-black left-section flex-column pt-2 ps-3" style="height: 100vh">
             <div class="button-left-side-container d-flex justify-content-start">
               <button
                 id="collapse-left-side-button"
@@ -320,8 +320,74 @@
 
           <!-- main section -->
 
-          <div class="col-7 bg-dark main-section overflow-auto p-0" style="height: 100vh">
+          <div class="col-12 col-md-9 col-lg-7 bg-dark main-section overflow-auto p-0" style="height: 100vh">
             <div class="backgroundArtistImage">
+              <div class="d-none d-sm-flex justify-content-between container header-main-section">
+                <div class="d-flex gap-3">
+                  <div class="middle-section-btn-container">
+                    <button class="btn p-0">
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                        viewBox="0 0 16 16"
+                        fill="white"
+                        width="18"
+                        heigth="18"
+                      >
+                        <path
+                          d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="middle-section-btn-container">
+                    <button class="btn p-0">
+                      <span>
+                        <svg
+                          data-encore-id="icon"
+                          role="img"
+                          aria-hidden="true"
+                          class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                          viewBox="0 0 16 16"
+                          fill="white"
+                          width="18"
+                          heigth="18"
+                        >
+                          <path
+                            d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+                          ></path>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src="https://i.pinimg.com/236x/d4/9e/11/d49e110a9c2c0b7903e340b52ca7d26e.jpg"
+                        alt="profile pic"
+                        width="30"
+                        height="30"
+                        class="me-2"
+                      />
+                      Lidia Nautilus ...
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="#">Profilo</a></li>
+                      <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <div class="d-flex align-items-center">
                 <svg
                   data-encore-id="icon"
@@ -382,12 +448,12 @@
             </div>
           </div>
           <!-- right section -->
-          <div class="d-block d-sm-none d-md-block col-2 bg-black right-section" style="height: 100vh">
+          <div class="d-lg-block d-none col-2 bg-black right-section" style="height: 100vh">
             <div class="container-right-side">
               <div class="d-none d-sm-flex justify-content-between mt-3 friends-activity">
                 <div><p>Attività amici</p></div>
                 <div>
-                  <ul class="d-flex icons-right-side gap-3">
+                  <ul class="d-flex icons-right-side gap-3 p-0">
                     <li>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
