@@ -1,9 +1,12 @@
 // START PROGRESS BAR
 const progressBar = document.getElementsByClassName("progress-bar")[0];
-setInterval(() => {
+progressInterval = setInterval(() => {
   const computedStyle = getComputedStyle(progressBar);
   const width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
-  progressBar.style.setProperty("--width", width + 1);
+  progressBar.style.setProperty("--width", width + 3.4);
+  if (width === 30) {
+    clearInterval(progressInterval);
+  }
 }, 1000);
 // END PROGRESS BAR
 
@@ -21,6 +24,9 @@ function startTimer() {
   timerInterval = setInterval(() => {
     seconds++;
     document.getElementById("songTimer").textContent = formatTime(seconds);
+    if (seconds >= 30) {
+      clearInterval(timerInterval);
+    }
   }, 1000);
 }
 
