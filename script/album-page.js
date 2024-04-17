@@ -1,5 +1,6 @@
-const getPlaylist = async () => {
-  const url = "https://deezerdevs-deezer.p.rapidapi.com/album/532596942";
+const getAlbum = async () => {
+  const id = 532596942;
+  const url = "https://striveschool-api.herokuapp.com/api/deezer/album/{id}";
   const options = {
     method: "GET",
     headers: {
@@ -10,9 +11,31 @@ const getPlaylist = async () => {
 
   try {
     const response = await fetch(url, options);
-    const result = await response.text();
-    console.log(result);
+    const result = await response.json();
+    displayAlbum(result);
   } catch (error) {
     console.error(error);
   }
 };
+
+
+const displayAlbum = (albumData) => {
+  const albumTitle = albumData.title;
+  const artistName = albumData.artist.name
+  const coverImage = albumData.cover_medium;
+  const trackList = albumData.tracks.data;
+
+
+document.getElementById('album-title').textContent = albumTitle;
+document.getElementById('artist-name').textContent = artistName;
+document.getElementById('album-cover').src = coverImage;
+
+const trackListContainer = document.getElementById('track-list');
+  trackList.forEach((track, index) => {
+    const trackItem = document.createElement('div');
+    trackItem.textContent = `${index + 1}. ${track.title}`;
+    trackListContainer.appendChild(trackItem);
+  });
+};
+
+window.onload = getAlbum;

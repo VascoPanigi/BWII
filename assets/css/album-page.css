@@ -16,3 +16,6 @@
   background: linear-gradient(0deg, rgba(33,37,41,1) 36%, rgba(253,208,46,1) 100%);
   }
   
+  .album button:hover{
+    scale: 1.1;
+  }
