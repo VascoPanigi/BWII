@@ -147,4 +147,6 @@ const createArtistCard = async (obj) => {
   </div>`;
 };
 
-window.addEventListener("DOMContentLoaded", () => {});
+window.addEventListener("DOMContentLoaded", () => {
+  playlistLeft();
+});
