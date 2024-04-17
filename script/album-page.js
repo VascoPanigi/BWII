@@ -16,12 +16,69 @@ const getAlbumData = async () => {
     const response = await fetch(url, options);
     const result = await response.json();
     createSongs(result);
+    createAlbumHeader(result);
 
     console.log(result);
   } catch (error) {
     console.error(error);
   }
 };
+
+/* const createHeader = async (obj) =>{
+  const artistHeader = document.getElementById("artist-header");
+
+  const title = obj.title
+  const image = obj.artist.picture_medium
+  const artistName = obj.artist.name
+
+
+  artistHeader.innerHTML = ``
+} */
+
+const createAlbumHeader = async (obj) =>{
+
+  // Creazione immagine album
+
+  const header = document.getElementById("album-header");
+
+  const image = obj.cover_medium;
+
+  header.innerHTML = `<img src="${image}" class="img-fluid" alt="cover image" />`
+
+  //Creazione Testo Album + Artista
+
+  const artistHeader = document.getElementById("artist-header");
+
+  const title = obj.title
+  const artistImage = obj.artist.picture_medium
+  const artistName = obj.artist.name
+  const releaseDate = obj.release_date
+
+  const releaseYear = releaseDate.split("-")[0]
+  console.log(releaseYear)
+
+  const tracks = obj.nb_tracks
+  const duration = obj.duration
+
+  const durationInMins = Math.floor(parseInt(duration) / 60)
+  console.log(durationInMins)
+
+
+  artistHeader.innerHTML = `<div class="text-right">
+                            <p class="album">ALBUM</p>
+                            <h1 class="album-h1 fw-bolder">${title}</h1>
+                            <img src="${artistImage}" alt="" width="20" height="20" class="me-3" />
+                            <p class="d-inline">
+                              <span class="fw-bold">${artistName} </span
+                              ><span class="fw-light">• ${releaseYear} • ${tracks} brani, </span
+                              ><span class="fw-light">${durationInMins} min</span>
+                            </p>
+                          </div>`
+
+  
+
+  console.log()
+}
 
 const createSongs = async (obj) => {
   const row = document.getElementById("row");
@@ -30,23 +87,22 @@ const createSongs = async (obj) => {
 
   for (let i = 0; i < tracks_array.length; i++) {
     const div = document.createElement("div");
-    div.classList.add("track-container");
+    div.classList.add("song-info", "track-container");
     const artist = obj.artist.name;
     const song_name = obj.tracks.data[i].title;
     const rank = obj.tracks.data[i].rank;
     const track_num = i + 1;
+    const duration = obj.tracks.data[i].duration;
+    const durationInMins = Math.floor(parseInt(duration) / 60)
+    const remainingSeconds = parseInt(duration) % 60;
 
     div.innerHTML = `
-    <div class="col d-flex justify-content-between text-white">
+    <div id="song-text" class="col d-flex justify-content-between text-white-50 text-end fw-light p-3">
 
-    <div class="col">${track_num}</div>
+    <div class="col text-start">${track_num}</div>
                           <div class="col">${artist} - ${song_name}</div>
                           <div class="col">${rank}</div>
-                          <div class="col"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
-                            <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"/>
-                            <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
-                            <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
-                          </svg></div>
+                          <div class="col">${durationInMins}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}</div>
                           </div>
     `;
 
