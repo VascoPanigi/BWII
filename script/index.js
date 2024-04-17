@@ -190,7 +190,7 @@ const createNewCard = async (playlist) => {
     const row = document.getElementById("row");
 
     const div = document.createElement("div");
-    div.classList.add("col-md-3", "col-sm-4", "col-xxl-2");
+    div.classList.add("col-sm-4", "col-md-3", "col-xxl-2");
     div.innerHTML = `
       <div class="card card-container playlist-card-container">
       <div class='d-flex flex-column align-items-center'>
