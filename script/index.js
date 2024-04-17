@@ -375,3 +375,11 @@ const getRandomElement = (array) => {
 // window.addEventListener("DOMContentLoaded", () => {
 //   init();
 // });
+
+const albumTitle = document.querySelector(".card-album-title");
+
+albumTitle.addEventListener("click", () => {
+  window.location.assign("./album-page.html?id=" + 532596942);
+});
+
+// https://striveschool-api.herokuapp.com/api/deezer/album/{id}
