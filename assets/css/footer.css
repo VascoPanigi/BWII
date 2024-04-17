@@ -49,7 +49,7 @@ footer svg:hover {
 .range-field {
   -webkit-appearance: none;
   outline: none;
-  width: 100px;
+  max-width: 70px;
   height: 5px;
   background: #2d2d2d;
   border-radius: 20px;
