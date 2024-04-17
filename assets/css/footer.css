@@ -32,7 +32,7 @@ footer {
 }
 /* PREV SONG è IL BOTTONE PRIMA DEL PLAY BUTTON ED è L'UNICO CHE VA MODIFICATO PERCHè VA RUOTATO*/
 #prevSong {
-  transform: rotate(180deg) translatey(-4.5px);
+  transform: rotate(180deg) translatey(-2px);
 }
 footer svg:hover {
   transform: scale3d(1.1, 1.1, 1.1);
@@ -55,12 +55,30 @@ footer svg:hover {
   border-radius: 20px;
   overflow: hidden;
 }
+.range-field:hover {
+  outline: none;
+  width: 100px;
+  height: 5px;
+  background: #2d2d2d;
+  border-radius: 20px;
+  overflow: hidden;
+}
 .range-field::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 0px;
   height: 0px;
   border-radius: 50%;
   background: #2d2d2d00;
-  box-shadow: -410px 0 0 400px #1ed760;
+  box-shadow: -410px 0 0 400px #ffffff;
   cursor: pointer;
+}
+.range-field::-webkit-slider-thumb:hover {
+  box-shadow: -410px 0 0 400px #1ed760;
+  -webkit-appearance: unset;
+}
+
+.footerBtn:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+
+  fill: white;
 }

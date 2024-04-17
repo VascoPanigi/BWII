@@ -1,0 +1,16 @@
+.artist-and-tracks-container {
+  .card {
+    .card-img-top {
+      border-radius: 50%;
+      width: 100px;
+    }
+  }
+}
+
+.artist-container {
+  background-color: #080600;
+}
+
+.artist-container:hover {
+  background-color: #191919;
+}
