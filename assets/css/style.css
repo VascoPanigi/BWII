@@ -161,3 +161,29 @@ main {
   margin-right: 20px;
   padding: 2px;
 }
+
+#artistsZone {
+  margin-bottom: 20px;
+  img.artistCircle {
+    border-radius: 50%;
+    width: 100%;
+  }
+  p.artistName {
+    font-size: 0.9em;
+    margin: 0;
+    margin-top: 7px;
+  }
+  p.artistType {
+    margin: 0;
+    font-size: 0.8em;
+  }
+  .artistCard {
+    padding: 10px;
+  }
+  .artistCard:hover {
+    background-color: #434547;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
