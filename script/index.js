@@ -184,7 +184,7 @@ const getArtists = async function () {
 };
 
 const getRandomAlbum = async () => {
-  const albumIds = ["309377597", "262561252", "366633", "234567", "111562", "182992"];
+  const albumIds = ["309377597", "262561252", "366633", "111562", "182992", "211834212", "173334792", "647112112"];
 
   let randomNumber = Math.floor(Math.random() * 3) + 1;
 
