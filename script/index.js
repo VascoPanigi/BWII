@@ -127,6 +127,7 @@ const init = async () => {
   playlistLeft();
   getArtists();
   getRandomAlbum();
+  getAlbumZone();
 };
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -184,7 +185,7 @@ const getArtists = async function () {
 };
 
 const getRandomAlbum = async () => {
-  const albumIds = ["309377597", "262561252", "366633", "111562", "182992", "211834212", "173334792", "647112112"];
+  const albumIds = ["309377597", "262561252", "211834212", "173334792", "647112112", "74115062", "104188", "86773062"];
 
   let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -208,7 +209,82 @@ const getRandomAlbum = async () => {
     albumArtistName.innerText = result.artist.name;
     const albumImg = document.querySelector("#albumImg");
     albumImg.src = result.cover_medium;
+
+    let vaiAllAlbum = document.querySelector("#albumBtnGreen");
+    vaiAllAlbum.addEventListener("click", function () {
+      window.location.href = "album-page.html?id=" + result.id;
+    });
   } catch (error) {
     console.error(error);
   }
 };
+
+const getAlbumZone = async () => {
+  const albumForAlbumZone = ["211834212", "173334792", "309377597", "74115062", "104188", "86773062"];
+  for (let i = 0; i < albumForAlbumZone.length; i++) {
+    const url = "https://striveschool-api.herokuapp.com/api/deezer/album/" + albumForAlbumZone[i];
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "0704e3122cmshbb05f15ef4f0571p1d5d41jsn006966e6ebea",
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      console.log(result);
+
+      const containerAlbumZone = document.querySelector("#containerAlbumZone");
+
+      let cardDiv = document.createElement("div");
+      cardDiv.classList.add("mb-3", "col-4", "p-1");
+
+      let card = document.createElement("div");
+      card.classList.add("card");
+      card.style.backgroundColor = "#9e9d9d54";
+      card.style.cursor = "pointer";
+      card.addEventListener("click", function () {
+        window.location.href = "album-page.html?id=" + result.id;
+      });
+
+      let row = document.createElement("div");
+      row.classList.add("row", "g-0");
+
+      let colImg = document.createElement("div");
+      colImg.classList.add("col-2");
+
+      let img = document.createElement("img");
+      img.classList.add("img-fluid", "rounded-start");
+      img.src = result.cover_medium;
+
+      let colText = document.createElement("div");
+      colText.classList.add("col-10", "d-flex", "align-items-center");
+
+      let cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
+
+      let cardTitle = document.createElement("h5");
+      cardTitle.classList.add("card-title", "text-white", "mb-0");
+      cardTitle.style.marginLeft = "8px";
+      cardTitle.innerText = result.title;
+
+      colImg.appendChild(img);
+      row.appendChild(colImg);
+      cardBody.appendChild(cardTitle);
+      colText.appendChild(cardBody);
+      row.appendChild(colText);
+      card.appendChild(row);
+      cardDiv.appendChild(card);
+      containerAlbumZone.appendChild(cardDiv);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+};
+
+let searchIcon = document.querySelector("#searchIcon");
+searchIcon.addEventListener("click", function () {
+  window.location.href = "search.html";
+});

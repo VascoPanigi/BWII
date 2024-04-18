@@ -253,6 +253,7 @@
                 class="Svg-sc-ytk21e-0 bneLcE search-icon QbaKKdcHNA2x3_YJvpYu"
                 viewBox="0 0 24 24"
                 fill="currentColor"
+                id="searchIcon"
               >
                 <path
                   d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
@@ -381,9 +382,9 @@
                       Lidia Nautilus ...
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="#">Profilo</a></li>
+                      <li><a class="dropdown-item" href="#">impostazioni</a></li>
                     </ul>
                   </div>
                 </div>
@@ -407,7 +408,7 @@
                       <p class="card-text fs-1 my-0" id="albumName">VIOLA (feat. Salmo)</p>
                       <p class="card-text" id="albumArtistName">Fedez, Salmo</p>
                       <div class="mb-2">
-                        <button class="badge rounded-pill py-3 px-4 me-2" id="playBtnGreen">Play</button>
+                        <button class="badge rounded-pill py-3 px-4 me-2" id="albumBtnGreen">Vai all'album</button>
                         <button class="badge rounded-pill py-3 px-4 mx-2 border-1 bg-dark border-light" id="saveBtn">
                           Salva
                         </button>
@@ -490,6 +491,10 @@
                   <p>Podcast e show</p>
                 </div>
 
+                <!-- Homepage Album Zone-->
+                <div class="container row" id="containerAlbumZone"></div>
+                <!-- Artist zone homepage (chiara)  -->
+                <h3>I tuoi artisti preferiti</h3>
                 <div id="artistsZone" class="row"></div>
               </div>
 
@@ -809,6 +814,7 @@
               <!-- END PLAYLIST ONLY MOBILE -->
               <!-- END OF THE  SECTION ONLYMOBILE  -->
               <!-- FINIRE CLASSI FINIRE CLASSI FINIRE CLASSI AAA -->
+              <h3 class="text-white pt-2">Playlist più popolari</h3>
               <div class="album py-5">
                 <div class="container d-none d-sm-flex">
                   <div id="row" class="row"></div>
