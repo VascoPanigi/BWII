@@ -87,7 +87,9 @@ const createNewCard = async (playlist) => {
     const row = document.getElementById("row");
 
     const div = document.createElement("div");
-    div.classList.add("col-sm-4", "col-md-3", "col-xxl-2");
+    div.classList.add("col-12", "col-sm-4", "col-md-3", "col-xxl-2");
+    div.style.display = "flex";
+    div.style.justifyContent = "center";
     div.innerHTML = `
       <div class="card card-container playlist-card-container">
       <div class='d-flex flex-column align-items-center'>
@@ -239,7 +241,7 @@ const getAlbumZone = async () => {
       const containerAlbumZone = document.querySelector("#containerAlbumZone");
 
       let cardDiv = document.createElement("div");
-      cardDiv.classList.add("mb-3", "col-4", "p-1");
+      cardDiv.classList.add("mb-3", "col-6", "col-md-4", "p-1");
 
       let card = document.createElement("div");
       card.classList.add("card");
