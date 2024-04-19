@@ -1,6 +1,5 @@
 /*LINK PLAYBTNFOOTER WITH THE PROGRESSBAR */
 const playBtnFooter = document.getElementById("playBtnFooter");
-const playBtnFooterMobile = document.getElementById("playBtnFooterMobile");
 // DENTRO QUEST'ADDEVENTLISTENER HO FATTO PARTIRE LE FUNZIONI DELLA PROGRESSBAR E DEL TIMER DELLE CANZONI
 playBtnFooter.addEventListener("click", () => {
   let isPlayng = true;
@@ -16,49 +15,6 @@ playBtnFooter.addEventListener("click", () => {
       }
     }
   };
-
-  const progressInterval = setInterval(updateProgressBar, 1000);
-  const formatTime = function (seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const secondi = seconds % 60;
-    const formattedSeconds = secondi < 10 ? `0${secondi}` : secondi;
-    return `${minutes}:${formattedSeconds}`;
-  };
-
-  const startTimer = function () {
-    let seconds = 0;
-    timerInterval = setInterval(() => {
-      if (isPlayng) {
-        seconds++;
-        document.getElementById("songTimer").textContent = formatTime(seconds);
-        if (seconds >= 30) {
-          clearInterval(timerInterval);
-        }
-      }
-    }, 1000);
-  };
-
-  startTimer();
-  // QUESTO E QUELLO CHE SUCCEDE AL SECONDO CLICK
-  playBtnFooter.addEventListener("click", () => {
-    isPlayng = !isPlayng;
-    if (!isPlayng) {
-      clearInterval(progressInterval);
-
-      // const progressBar = document.getElementsByClassName("progress-bar")[0];
-      // const computedStyle = getComputedStyle(progressBar);
-      // const currentWidth = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
-      // console.log(currentWidth);
-
-      clearInterval(timerInterval);
-    } else {
-      updateProgressBar();
-    }
-  });
-});
-
-playBtnFooterMobile.addEventListener("click", () => {
-  let isPlayng = true;
 
   const progressInterval = setInterval(updateProgressBar, 1000);
   const formatTime = function (seconds) {
