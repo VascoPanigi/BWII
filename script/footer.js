@@ -44,13 +44,12 @@ playBtnFooter.addEventListener("click", () => {
     if (!isPlayng) {
       clearInterval(progressInterval);
 
-      const progressBar = document.getElementsByClassName("progress-bar")[0];
-      const computedStyle = getComputedStyle(progressBar);
-      const currentWidth = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
-      console.log(currentWidth);
-      progressBar.style.setProperty("--width", ` ${currentWidth}`);
+      // const progressBar = document.getElementsByClassName("progress-bar")[0];
+      // const computedStyle = getComputedStyle(progressBar);
+      // const currentWidth = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
+      // console.log(currentWidth);
+
       clearInterval(timerInterval);
-      width = 0;
     } else {
       updateProgressBar();
     }
