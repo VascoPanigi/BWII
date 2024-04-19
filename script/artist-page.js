@@ -57,6 +57,9 @@ const getTracks = async function (artistId) {
       trackNumber.classList.add("trackNumber");
       trackNumber.innerText = i + 1;
 
+      let coverImgContainer = document.createElement("div");
+      coverImgContainer.classList.add("cover-image-track-container");
+
       let img = document.createElement("img");
       img.classList.add("imgTrack");
       img.src = result.data[i].album.cover_small;
@@ -85,7 +88,8 @@ const getTracks = async function (artistId) {
 
       track.appendChild(div);
       div.appendChild(trackNumber);
-      div.appendChild(img);
+      div.appendChild(coverImgContainer);
+      coverImgContainer.appendChild(img);
       div.appendChild(titleTrack);
       div2.appendChild(rankTrack);
       div2.appendChild(timeTrack);
@@ -114,24 +118,47 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const playSong = async function (clickedTrack, preview) {
   // in caso volessimo far funzionare la navbar, questi solo i valori da inserire
+
   const trackData = clickedTrack.querySelector(".titleTrack").innerText;
-  const artistData = document.querySelector(".artistName").innerText;
+  const artistName = document.querySelector(".artistName").innerText;
+
+  const albumImg = document.querySelector(".cover-image-track-container").innerHTML;
+  console.log(albumImg);
+
+  //elementi del dom
+  const titleSectionPlayer = document.getElementById("song-title");
+  const artistSectionPlayer = document.getElementById("artist-name");
+  const coverSectionPlayer = document.getElementById("cover-image-container");
+  console.log(coverSectionPlayer);
 
   const previewUrl = preview;
 
   if (previewUrl) {
     const audio = new Audio(previewUrl);
 
-    audio.play();
+    artistSectionPlayer.innerText = artistName;
+    titleSectionPlayer.innerText = trackData;
+    coverSectionPlayer.innerHTML = albumImg;
+
+    if (!audio.paused) {
+      audio.pause();
+      // clickedTrack.play()
+    } else {
+      audio.play();
+      // startPlayback();
+    }
+
     playPauseBtn.addEventListener("click", () => {
-      console.log("porcoddio");
       if (!audio.paused) {
         audio.pause();
+        pausePlayback();
+
         playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"></path>
     </svg>`;
       } else {
         audio.play();
+        startPlayback();
         playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
     </svg>`;
@@ -158,5 +185,4 @@ const homeButton = document.getElementById("home-button");
 
 homeButton.addEventListener("click", () => {
   window.location.href = "./index.html";
-  console.log("ciao");
 });
