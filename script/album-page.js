@@ -120,4 +120,5 @@ const createSongs = async (obj) => {
 
 window.addEventListener("DOMContentLoaded", () => {
   getAlbumData();
+  playlistLeft();
 });
