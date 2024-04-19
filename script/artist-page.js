@@ -1,5 +1,5 @@
 //funzione creazione pagina artista dinamica
-// let currentAudio = null;
+let currentAudio = null;
 
 const getArtist = async function (idArtist) {
   let url = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + idArtist;
@@ -118,11 +118,23 @@ window.addEventListener("DOMContentLoaded", () => {
   getTracks(artistId);
 });
 
+const updatePlayPauseIcon = () => {
+  if (currentAudio && !currentAudio.paused) {
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
+  </svg>`;
+  } else {
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"></path>
+  </svg>`;
+  }
+};
+
 const playSong = async function (clickedTrack, preview) {
   // in caso volessimo far funzionare la navbar, questi solo i valori da inserire
-  // if (currentAudio) {
-  //   currentAudio.pause();
-  // }
+  if (currentAudio) {
+    currentAudio.pause();
+  }
 
   const trackData = clickedTrack.querySelector(".titleTrack").innerText;
   const artistName = document.querySelector(".artistName").innerText;
@@ -145,26 +157,28 @@ const playSong = async function (clickedTrack, preview) {
     titleSectionPlayer.innerText = trackData;
     coverSectionPlayer.innerHTML = albumImg;
 
-    // currentAudio = audio;
+    currentAudio = audio;
+    console.log(currentAudio);
 
     if (!audio.paused) {
       audio.pause();
-      // clickedTrack.play()
+      pausePlayback();
     } else {
       audio.play();
-      // startPlayback();
+      startPlayback();
     }
 
     playPauseBtn.addEventListener("click", () => {
-      if (!audio.paused) {
-        audio.pause();
+      if (!currentAudio.paused) {
+        currentAudio.pause();
         pausePlayback();
 
         playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"></path>
     </svg>`;
+        console.log("ciaone");
       } else {
-        audio.play();
+        currentAudio.play();
         startPlayback();
         playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
