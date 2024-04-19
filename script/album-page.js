@@ -129,3 +129,15 @@ homeButton.addEventListener("click", () => {
   window.location.href = "./index.html";
   console.log("ciao");
 });
+
+const backButton = document.getElementById("back")
+
+backButton.addEventListener("click", () =>{
+  history.back()
+})
+
+const forwardButton = document.getElementById("forward")
+
+forwardButton.addEventListener("click", () =>{
+  history.forward()
+})
