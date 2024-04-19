@@ -108,7 +108,7 @@ const createSearchAlbum = async (obj) => {
     console.log(id);
 
     const div = document.createElement("div");
-    div.classList.add("col-sm-4", "col-md-3", "col-xxl-2");
+    div.classList.add("col-6", "col-sm-4", "col-md-3", "col-xxl-2");
     topResultsAlbums.appendChild(div);
 
     div.innerHTML = `

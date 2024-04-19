@@ -38,3 +38,10 @@ ul {
   }
   min-height: 220px;
 }
+#search-value::placeholder {
+  color: white;
+}
+input#search-value {
+  background-color: transparent;
+  border-radius: 20px;
+}

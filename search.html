@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left section -->
-          <div class="d-none d-sm-flex col-3 bg-black left-section flex-column pt-2 ps-3" style="height: 100vh">
+          <div class="d-none d-sm-block col-3 bg-black left-section flex-column pt-2 ps-3" style="height: 100vh">
             <div class="button-left-side-container d-flex justify-content-start">
               <button
                 id="collapse-left-side-button"
@@ -322,9 +322,9 @@
 
           <!-- main section -->
 
-          <div class="col-12 col-md-9 col-lg-7 bg-dark main-section overflow-auto pt-4" style="height: 100vh">
+          <div class="col-12 col-sm-9 col-lg-7 bg-dark main-section overflow-auto pt-4" style="height: 100vh">
             <div class="topside-container">
-              <div class="d-none d-sm-flex justify-content-between container">
+              <div class="d-sm-flex justify-content-between container">
                 <div class="d-flex gap-2">
                   <div class="d-flex gap-3">
                     <div class="middle-section-btn-container">
@@ -370,17 +370,17 @@
                     <form class="d-flex" role="search">
                       <input
                         id="search-value"
-                        class="form-control me-2"
+                        class="form-control me-2 text-white"
                         type="search"
-                        placeholder="Search"
+                        placeholder="Cosa vuoi ascoltare?"
                         aria-label="Search"
                       />
-                      <button class="btn btn-outline-success" type="submit">Search</button>
+                      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
                     </form>
                   </div>
                 </div>
                 <div>
-                  <div class="dropdown">
+                  <div class="dropdown d-none d-md-block">
                     <button
                       class="btn btn-secondary dropdown-toggle d-flex align-items-center"
                       type="button"
@@ -397,9 +397,9 @@
                       Lidia Nautilus ...
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="#">Profilo</a></li>
+                      <li><a class="dropdown-item" href="#">Impostazioni</a></li>
                     </ul>
                   </div>
                 </div>
@@ -407,7 +407,7 @@
             </div>
             <div class="artist-and-tracks-search-result container mt-5">
               <div class="row">
-                <div class="artist-and-tracks-container d-flex col-4">
+                <div class="artist-and-tracks-container d-flex col-12 col-md-4">
                   <div class="card artist-container mb-3">
                     <!-- <div class="d-flex justify-content-center mt-2 mb-2">
                       <img src="./assets/imgs/main/image-11.jpg" class="card-img-top" alt="..." />
@@ -422,7 +422,7 @@
                   </div>
                 </div>
 
-                <div id="top-5-songs" class="col-8 search-songs-result">
+                <div id="top-5-songs" class="col-md-8 col-12 search-songs-result">
                   <!-- <ul class="list-group">
                     <li class="list-group-item">
                       <div class="d-flex align-items-center">
@@ -973,6 +973,6 @@
 
     <script src="./script/footer.js"></script>
     <script src="./script/search.js"></script>
-    <!-- <script src="./script/default-functions.js"></script> -->
+    <script src="./script/default-functions.js"></script>
   </body>
 </html>
