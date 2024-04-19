@@ -187,3 +187,7 @@ main {
     cursor: pointer;
   }
 }
+
+#viola-card {
+  border-top: 2px solid #252525;
+}

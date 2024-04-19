@@ -1,28 +1,28 @@
-.album{
-    font-size: 0.7rem;
-    font-weight: 700;
-  }
-  
-  .album-h1{
-    font-size: 4.5rem;
-  }
-  
-  .text-right > img{
-    border-radius: 50%;
-  }
-  
-  .main-section{
-    background: rgb(33,37,41);
-  background: linear-gradient(0deg, rgba(33,37,41,1) 36%, rgba(253,208,46,1) 100%);
-  }
-  
-  .album button:hover{
-    scale: 1.1;
-  }
+.album {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
 
-  .song-info:hover {
-    background-color: #000;
-    color: #fff;
-    opacity: .5;
-    border-radius: 10px
-  }
+.album-h1 {
+  font-size: 4.5rem;
+}
+
+.text-right > img {
+  border-radius: 50%;
+}
+
+.main-section {
+  background: rgb(33, 37, 41);
+  background: linear-gradient(0deg, rgba(33, 37, 41, 1) 36%, rgba(253, 208, 46, 1) 100%);
+}
+
+.album button:hover {
+  scale: 1.1;
+}
+
+.song-info:hover {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.5;
+  border-radius: 10px;
+}

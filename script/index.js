@@ -159,7 +159,7 @@ const getArtists = async function () {
       const artistsZone = document.querySelector("#artistsZone");
 
       const div = document.createElement("div");
-      div.classList.add("artistCard", "col-3");
+      div.classList.add("artistCard", "col-6", "col-md-3");
       div.addEventListener("click", function () {
         window.location.href = "artist-page.html?artistId=" + result.id;
       });
@@ -289,4 +289,11 @@ const getAlbumZone = async () => {
 let searchIcon = document.querySelector("#searchIcon");
 searchIcon.addEventListener("click", function () {
   window.location.href = "search.html";
+});
+
+const homeButton = document.getElementById("home-button");
+
+homeButton.addEventListener("click", () => {
+  window.location.href = "./index.html";
+  console.log("ciao");
 });

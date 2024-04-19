@@ -1,26 +1,39 @@
-// START PROGRESS BAR
-const progressBar = document.getElementsByClassName("progress-bar")[0];
-progressInterval = setInterval(() => {
+const playBtnFooter = document.getElementById("playBtnFooter");
+let isPlaying = false;
+let progressInterval;
+let timerInterval;
+let seconds = 0;
+
+playBtnFooter.addEventListener("click", () => {
+  isPlaying = !isPlaying;
+  if (isPlaying) {
+    startPlayback();
+  } else {
+    pausePlayback();
+  }
+});
+
+const startPlayback = () => {
+  progressInterval = setInterval(updateProgressBar, 1000);
+  startTimer();
+};
+
+const pausePlayback = () => {
+  clearInterval(progressInterval);
+  clearInterval(timerInterval);
+};
+
+const updateProgressBar = () => {
+  const progressBar = document.getElementsByClassName("progress-bar")[0];
   const computedStyle = getComputedStyle(progressBar);
-  const width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
+  let width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
   progressBar.style.setProperty("--width", width + 3.4);
-  if (width === 30) {
+  if (width >= 30) {
     clearInterval(progressInterval);
   }
-}, 1000);
-// END PROGRESS BAR
+};
 
-//START SONG TIMER
-
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const secondi = seconds % 60;
-  const formattedSeconds = secondi < 10 ? `0${secondi}` : secondi;
-  return `${minutes}:${formattedSeconds}`;
-}
-
-function startTimer() {
-  let seconds = 0;
+const startTimer = () => {
   timerInterval = setInterval(() => {
     seconds++;
     document.getElementById("songTimer").textContent = formatTime(seconds);
@@ -28,19 +41,25 @@ function startTimer() {
       clearInterval(timerInterval);
     }
   }, 1000);
-}
+};
 
-document.addEventListener("DOMContentLoaded", startTimer);
-//END SONG TIMER
+const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  const formattedSeconds = remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+  return `${minutes}:${formattedSeconds}`;
+};
 
 const slideValue = document.querySelector("span");
 const inputSlider = document.querySelector("input");
-inputSlider.oninput = () => {
+
+inputSlider.addEventListener("input", () => {
   let value = inputSlider.value;
   slideValue.textContent = value;
   slideValue.style.left = value / 2 + "%";
   slideValue.classList.add("show");
-};
-inputSlider.onblur = () => {
+});
+
+inputSlider.addEventListener("blur", () => {
   slideValue.classList.remove("show");
-};
+});
