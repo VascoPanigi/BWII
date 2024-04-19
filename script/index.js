@@ -82,6 +82,7 @@ const createNewCard = async (playlist) => {
   const playlistPicture = playlist.picture_medium;
   const playlistCreator = playlist.creator.name;
   const playlistEmptyValue = playlist.message;
+  const numberTracks = playlist.nb_tracks;
 
   if (playlistEmptyValue != "no data") {
     const row = document.getElementById("row");
@@ -91,7 +92,7 @@ const createNewCard = async (playlist) => {
     div.style.display = "flex";
     div.style.justifyContent = "center";
     div.innerHTML = `
-      <div class="card card-container playlist-card-container">
+      <div class="d-none d-sm-block card card-container playlist-card-container">
       <div class='d-flex flex-column align-items-center'>
       <img src="${playlistPicture}" class="card-img-top m-2 " alt="playlist cover" />
       </div>
@@ -100,7 +101,77 @@ const createNewCard = async (playlist) => {
         <p class="card-text color-text">${playlistCreator}</p>
       </div>
     </div>
+
+    <div class="d-sm-none card mb-3 mx-1 my-5 bg-gradient">
+                <div class="row g-0">
+                  <div class="col-1 d-flex">
+                    <img src="${playlistPicture}" class="p-2" width="150" alt="..." />
+                    <div class="m-2 d-flex flex-column flex-wrap">
+                      <h5 class="card-title">${playlistName}</h5>
+                      <p style="width: 250px" class="card-text d-flex flex-wrap">
+                      ${playlistCreator}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between p-2">
+                        <div>
+                          <button class="border-0 bg-transparent">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              fill="#1ed760"
+                              class="bi bi-heart-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                              />
+                            </svg>
+                          </button>
+                          <button class="border-0 bg-transparent">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              fill="currentColor"
+                              class="bi bi-three-dots"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="d-flex">
+                          <p class="mb-0">${numberTracks} tracks</p>
+                          <button class="border-0 bg-transparent">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="25"
+                              height="25"
+                              fill="currentColor"
+                              class="bi bi-play-circle"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                              <path
+                                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
       `;
+
     row.appendChild(div);
     // } else {
     //   getPlaylist();
