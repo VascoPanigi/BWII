@@ -153,3 +153,10 @@ const playSong = async function (clickedTrack, preview) {
 };
 
 const playPauseBtn = document.getElementById("playBtnFooter");
+
+const homeButton = document.getElementById("home-button");
+
+homeButton.addEventListener("click", () => {
+  window.location.href = "./index.html";
+  console.log("ciao");
+});

@@ -115,3 +115,14 @@ closeLeftBtn.addEventListener("click", function () {
     }
   }
 });
+
+// const homeButton = document.getElementById('home-button')
+
+// const redirectHome = ()=>{
+
+//   homeButton.addEventListener("click", ()=>{
+//   window.location.href = "./index.html"
+//   console.log("ciao")
+//   })
+
+// }

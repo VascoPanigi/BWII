@@ -1,12 +1,3 @@
-// //RATIO > l-utente digita un nome-per esempio eminem
-
-// //2 io quindi metto questo parametro nell-endpoint
-// //https://deezerdevs-deezer.p.rapidapi.com/search?q={query}
-
-// //3- genero una card per l-artista
-// //4- faccio il display di 5 canzoni
-// //5- tempo permettendo - faccio vedere album e playlist in basso
-
 const form = document.querySelector("form");
 const inputField = document.getElementById("search-value");
 const top5SongsContainer = document.getElementById("top-5-songs");
@@ -40,6 +31,7 @@ const handleSubmit = async (event) => {
     createTop5SongsResult(result);
     createArtistCard(result);
     createSearchAlbum(result);
+    // redirectToAlbumPage(createSearchAlbum);
     console.log(result);
   } catch (error) {
     console.error(error);
@@ -112,6 +104,8 @@ const createSearchAlbum = async (obj) => {
     const albumTitle = obj.data[i].album.title;
     const albumCover = obj.data[i].album.cover_medium;
     const artistName = obj.data[i].artist.name;
+    const id = obj.data[i].album.id;
+    console.log(id);
 
     const div = document.createElement("div");
     div.classList.add("col-sm-4", "col-md-3", "col-xxl-2");
@@ -128,6 +122,12 @@ const createSearchAlbum = async (obj) => {
       </div>
     </div>
       `;
+
+    const albumCard = div.querySelector(".playlist-card-container");
+
+    albumCard.addEventListener("click", () => {
+      window.location.href = "./album-page.html?id=" + id;
+    });
   }
 };
 
@@ -135,6 +135,7 @@ const createArtistCard = async (obj) => {
   const name = obj.data[1].artist.name;
   const picture = obj.data[1].artist.picture_medium;
   const type = obj.data[1].artist.type;
+  const id = obj.data[1].artist.id;
 
   artistCardContainer.innerHTML = `<div class="d-flex justify-content-center mt-2 mb-2 artist-album-card-search-page">
     <img src="${picture}" class="card-img-top" alt="${name}'s picture" />
@@ -145,8 +146,21 @@ const createArtistCard = async (obj) => {
     ${type}
     </p>
   </div>`;
+
+  const artistPicCard = document.querySelector(".artist-album-card-search-page");
+
+  artistPicCard.addEventListener("click", () => {
+    window.location.href = "artist-page.html?id=" + id;
+  });
 };
 
 window.addEventListener("DOMContentLoaded", () => {
   playlistLeft();
+});
+
+const homeButton = document.getElementById("home-button");
+
+homeButton.addEventListener("click", () => {
+  window.location.href = "./index.html";
+  console.log("ciao");
 });
