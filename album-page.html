@@ -673,19 +673,82 @@
       </div>
     </main>
     <footer class="fixed-bottom">
-      <div class="container-fluid bg-dark text-white">
+      <!-- FOOTER MOBILE VERSION-->
+      <div class="container-fluid  bg-black bg-opacity-75 d-md-none">
+        <div class="row p-3 ">
+          <div class="col-4 text-center">
+            <button class="border-0 bg-transparent">
+                <svg
+                class="footerBtn"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="#B5B5B5"
+                  class="bi bi-house-door-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                  />
+                  <p class="text-white mb-0 fs-6">Home</p>
+                </svg>
+              </button>
+          </div>
+          <div class="col-4 text-center">
+            <button class="border-0 bg-transparent">
+                <svg
+                class="footerBtn"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="#B5B5B5"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                  <p class="text-white mb-0 fs-6">Cerca</p>
+                </svg>
+              </button>
+          </div>
+          <div class="col-4 text-center">
+            <button class="border-0 bg-transparent">
+                <svg
+                class="footerBtn"
+                  data-encore-id="icon"
+                  width="25"
+                  height="25"
+                  fill="#B5B5B5"
+                  role="img"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  class="Svg-sc-ytk21e-0 bneLcE"
+                >
+                  <path
+                    d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
+                  ></path>
+                  <p  class="text-white mb-0 fs-6">La tua libreria</p>
+                </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- END OF FOOTER MOBILE VERSION -->
+      <!-- FOOTER DESKTOP VERSION -->
+      <div class="container-fluid bg-black text-white d-none d-md-block justify-content-between flex-wrap">
         <div class="row">
-          <div class="col-3 d-flex align-items-center">
+          <div class="col-3 d-flex align-items-center" >
             <!-- CURRENT SONG INFO -->
-            <div class=" ">
-              <img height="55px" src="assets/imgs/main/image-1.jpg" alt="" />
+            <div id="cover-image-container">
+              <img id='cover-image' height="55px" src="assets/imgs/main/image-1.jpg" alt="song cover image" />
             </div>
             <div class="p-3">
-              <p class="m-0">Fat Funny Friend</p>
-              <p class="m-0 text-secondary">Maddie Zahm</p>
+              <p class="m-0" id="song-title">Fat Funny Friend</p>
+              <p class="m-0 text-secondary" id="artist-name">Maddie Zahm</p>
             </div>
             <div>
-              <button class="bg-transparent border-0 mx-2">
+              <button class="bg-transparent border-0 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -743,7 +806,7 @@
                 </svg>
               </button>
               <!-- PLAY BUTTON ICON -->
-              <button class="bg-transparent border-0 mx-2">
+              <button id="playBtnFooter" class="bg-transparent border-0 mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"
@@ -806,20 +869,20 @@
               <div class="progress-bar mt-2" data-label=""></div>
               <p id="songTimeLength" class="my-auto px-2">
                 <!-- SONG TIME LENGTH -->
-                03:00
+                0:30
               </p>
             </div>
           </div>
-          <div class="col-3 d-flex justify-content-end mx-auto">
+          <div class="col-3 d-flex  justify-content-end mx-auto">
             <!-- GENERAL SONG SETTINGS  -->
 
-            <button class="bg-transparent border-0 mx-1">
+            <button class="bg-transparent border-0 ">
               <!-- MICROPHONE ICON BUTTON -->
               <svg
                 data-encore-id="icon"
                 role="img"
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 fill="white"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
@@ -830,13 +893,13 @@
                 ></path>
               </svg>
             </button>
-            <button class="bg-transparent border-0 mx-1">
+            <button class="bg-transparent border-0 ">
               <!-- CODA ICON BUTTON -->
               <svg
                 data-encore-id="icon"
                 role="img"
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 fill="white"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
@@ -847,13 +910,13 @@
                 ></path>
               </svg>
             </button>
-            <button class="bg-transparent border-0 mx-1">
+            <button class="bg-transparent border-0 ">
               <!-- CONNECT DEVICE ICON BUTTON -->
               <svg
                 data-encore-id="icon"
                 role="img"
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 fill="white"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
@@ -864,13 +927,13 @@
                 ></path>
               </svg>
             </button>
-            <button class="bg-transparent border-0 mx-1">
+            <button class="bg-transparent border-0 ">
               <!-- VOLUME ICON BUTTON -->
               <svg
                 data-encore-id="icon"
                 role="img"
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 fill="white"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
@@ -889,13 +952,14 @@
               </div>
             </button>
 
-            <button class="bg-transparent border-0 mx-1">
+            <button class="bg-transparent border-0 ">
               <!-- FULLSCREEN ICON BUTTON -->
               <svg
+              class="footerBtn"
                 data-encore-id="icon"
                 role="img"
-                width="20"
-                height="20"
+                width="16"
+                height="16"
                 fill="white"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
@@ -907,6 +971,8 @@
               </svg>
             </button>
           </div>
+
+          
         </div>
       </div>
     </footer>
