@@ -76,6 +76,8 @@ const createAlbumHeader = async (obj) => {
   console.log();
 };
 
+//Creazione Lista Canzoni
+
 const createSongs = async (obj) => {
   const row = document.getElementById("row");
 
@@ -94,22 +96,28 @@ const createSongs = async (obj) => {
 
     div.innerHTML = `
     <div id="song-text" class="col d-flex justify-content-between text-white-50 text-end fw-light p-3">
+      <div class="col text-start">${track_num}</div>
+      <div class="col">${artist} - ${song_name}</div>
+      <div class="col">${rank}</div>
+      <div class="col">${durationInMins}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}</div>
+    </div>`;
 
-    <div class="col text-start">${track_num}</div>
-                          <div class="col">${artist} - ${song_name}</div>
-                          <div class="col">${rank}</div>
-                          <div class="col">${durationInMins}:${
-      remainingSeconds < 10 ? "0" : ""
-    }${remainingSeconds}</div>
-                          </div>
-    `;
+    // Cambia tracknum in button on hover
 
-    console.log(song_name, rank);
+    div.addEventListener("mouseenter", () => {
+      const trackNumDiv = div.querySelector(".col.text-start");
+      trackNumDiv.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="14" fill="white" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>`;
+    });
+
+    div.addEventListener("mouseleave", () => {
+      const trackNumDiv = div.querySelector(".col.text-start");
+      trackNumDiv.textContent = track_num;
+    });
+
     row.appendChild(div);
   }
 };
 
 window.addEventListener("DOMContentLoaded", () => {
   getAlbumData();
-  playlistLeft();
 });
