@@ -1,5 +1,5 @@
 //funzione creazione pagina artista dinamica
-let currentAudio = null;
+// let currentAudio = null;
 
 const getArtist = async function (idArtist) {
   let url = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + idArtist;
@@ -120,9 +120,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const playSong = async function (clickedTrack, preview) {
   // in caso volessimo far funzionare la navbar, questi solo i valori da inserire
-  if (currentAudio) {
-    currentAudio.pause();
-  }
+  // if (currentAudio) {
+  //   currentAudio.pause();
+  // }
 
   const trackData = clickedTrack.querySelector(".titleTrack").innerText;
   const artistName = document.querySelector(".artistName").innerText;
@@ -145,7 +145,7 @@ const playSong = async function (clickedTrack, preview) {
     titleSectionPlayer.innerText = trackData;
     coverSectionPlayer.innerHTML = albumImg;
 
-    currentAudio = audio;
+    // currentAudio = audio;
 
     if (!audio.paused) {
       audio.pause();
